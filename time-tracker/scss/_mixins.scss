@@ -1,0 +1,25 @@
+@mixin flexBox($display: flex, $direction: row, $align: center, $justify: center) {
+  display: $display;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin fontStyle($size: null, $weight: null, $color: null, $center: null) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-align: $center;
+}
+
+@mixin pad {
+  @media (max-width: 940px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 450px) {
+    @content;
+  }
+}

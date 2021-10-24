@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | IP Address Tracker</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>IP Address Tracker</h1>
+      <form id="form">
+        <input id="text" type="text" placeholder="Search for any IP address or domain">
+        <button type="submit">
+        </button>
+      </form>
+    </header>
+    <div id="tracking-dashboard" class="tracking-dashboard">
+      <div class="info-wrap">
+        <div class="info">
+          <h3>IP ADDRESS</h3>
+          <p id="ip">192.211.213.11</p>
+        </div>
+      </div>
+      <div class="info-wrap">
+        <div class="info">
+          <h3>LOACTION</h3>
+          <p id="location">Brooklyn, NY 10001</p>
+        </div>
+      </div>
+      <div class="info-wrap">
+        <div class="info">
+          <h3>TIMEZONE</h3>
+          <p id="timezone">UTC-05:00</p>
+        </div>
+      </div>
+      <div class="info-wrap">
+        <div class="info">
+          <h3>ISP</h3>
+          <p id="isp">SpaceX starlink</p>
+        </div>
+      </div>
+    </div>
+    <div class="map" id="map"></div>
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+    </div>
+    
+    <div id="alert" class="alert">
+      <div class="alert-header">
+        <span><i class="fas fa-exclamation-circle"></i>Warning</span>
+        <button id="close-btn" class="close-btn">X</button>
+      </div>
+      <p>IP Address is invalid</p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

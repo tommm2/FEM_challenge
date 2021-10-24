@@ -1,0 +1,12 @@
+@mixin flexBox($direction: null, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin md-screen {
+  @media (max-width: 820px) {
+    @content;
+  }
+}

@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import "./mixn";
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  overflow: hidden;
+}
+
+span {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+main {
+  width: 100%;
+  header {
+    @include flexBox(column, null);
+    height: 30vh;
+    background: url("../images/pattern-bg.png") no-repeat center/cover;
+    h1 {
+      padding: 1rem 0;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    form {
+      @include md-screen {
+        width: 75%;
+      }
+      max-width: 25rem;
+      width: 100%;
+      display: flex;
+      input {
+        width: 90%;
+        height: 2.5rem;
+        padding: 0.8rem;
+        border: 0;
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+        &:focus {
+          outline: 0;
+        }
+      }
+      button {
+        cursor: pointer;
+        width: 10%;
+        height: 2.5rem;
+        padding: 1rem;
+        background: $dark url("../images/icon-arrow.svg") no-repeat center;
+        border: 0;
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+      }
+    }
+  }
+  .tracking-dashboard {
+    @include flexBox($justify: space-around);
+    @include md-screen {
+      @include flexBox(column);
+      width: 75%;
+    }
+    max-width: 50rem;
+    width: 100%;
+    padding: 2rem;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    border-radius: $radius;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+    display: none;
+    .info-wrap {
+      @include flexBox();
+      .info {
+        @include md-screen {
+          text-align: center;
+        }
+        h3 {
+          font-size: 0.6rem;
+          margin-bottom: 0.4rem;
+          color: $gray;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      &::after {
+        content: "";
+        width: 0.1rem;
+        height: 4rem;
+        margin: 0 2rem;
+        background-color: $gray;
+        @include md-screen {
+          display: none;
+        }
+      }
+      &:nth-child(4)::after {
+        display: none;
+      }
+    }
+    &.show {
+      display: flex;
+    }
+  }
+  .map {
+    z-index: 0;
+    height: 70vh;
+  }
+  .loading {
+    @include flexBox();
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    .spinner {
+      @include flexBox();
+      animation: spin 1s linear infinite;
+      &:after {
+        content: "";
+        width: 60px;
+        height: 60px;
+        border: 8px solid rgba(255, 255, 255, 0.5);
+        border-top-color: $dark;
+        border-radius: 50%;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    }
+    &.show {
+      display: flex;
+    }
+  }
+  .alert {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    border-left: 5px solid 	$alert;
+    background-color: #ffff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+    transform: translateX(250px);
+    transition: transform 1s ease-in-out;
+    .alert-header {
+      @include flexBox($justify: space-between);
+      margin: 0 1rem;
+      i {
+        margin-right: 0.3rem;
+      }
+      span {
+        color: $alert;
+      }
+      .close-btn {
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+      }
+    }
+    p {
+      padding: 0.6rem 2rem;
+    }
+    &.slideIn {
+      transform: translateX(0);
+    }
+  }
+}

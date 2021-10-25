@@ -63,7 +63,7 @@ main {
   .tracking-dashboard {
     @include flexBox($justify: space-around);
     @include md-screen {
-      @include flexBox(column);
+      flex-direction: column;
       width: 75%;
     }
     max-width: 50rem;

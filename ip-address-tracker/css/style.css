@@ -81,10 +81,7 @@ main .tracking-dashboard {
 }
 @media (max-width: 820px) {
   main .tracking-dashboard {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 75%;
   }
 }

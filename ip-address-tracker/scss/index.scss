@@ -152,7 +152,7 @@ main {
     border-left: 5px solid 	$alert;
     background-color: #ffff;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
-    transform: translateX(250px);
+    transform: translateX(300px);
     transition: transform 1s ease-in-out;
     .alert-header {
       @include flexBox($justify: space-between);
